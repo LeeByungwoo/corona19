@@ -1,6 +1,6 @@
 import gspread
 import ujson
-from cralwer.config import GOOGLE_CREDENTIALS, SPREADSHEET_URL
+from cralwer.config import SPREADSHEET_URL
 from oauth2client.service_account import ServiceAccountCredentials
 
 SCOPE = [
