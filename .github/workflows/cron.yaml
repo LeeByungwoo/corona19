@@ -1,0 +1,28 @@
+name: corona data cralwering
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: "*/20 * * * *"
+jobs:
+  fetch:
+    name: Fetch
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: crawling
+        run: |
+          echo $GOOGLE_CREDENTIALS > credentials.json
+          python -m cralwer
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+          SPREADSHEET_URL: ${{ secrets.SPREADSHEET_URL }}
