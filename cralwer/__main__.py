@@ -58,16 +58,16 @@ def main():
         for word in result:
             conora_list.append(remove_tag(str(word)))
 
-        worksheet.insert_row(
+        worksheet.append_row(
             [
                 cralwer_time,
                 conora_list[0],
-                conora_list[1],
-                conora_list[2],
-                conora_list[3],
+                int((conora_list[1]).replace(',', '')),
+                int(conora_list[2]),
+                int(conora_list[3]),
                 conora_list[4],
-                conora_list[5],
-                conora_list[6],
+                int(conora_list[5]),
+                conora_list[6]
             ],
             2,
         )
