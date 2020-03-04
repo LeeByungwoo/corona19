@@ -48,7 +48,7 @@ def main():
         )
         # 서울 확진자 수
         result += soup.select(
-            "div > div.status > div.status-seoul > div.cell.cell1 > div > p.counter"
+            "div > div.status > div.status-seoul > div.cell-group.first-cell > div.cell.cell1 > div > p.counter"
         )
         # 서울 세부 내용
         result += soup.select(
@@ -66,8 +66,8 @@ def main():
                 int(conora_list[2]),
                 int(conora_list[3]),
                 conora_list[4],
-                conora_list[5],
-#                 conora_list[6]
+                int(conora_list[5]),
+                conora_list[6]
             ],
             2,
         )
