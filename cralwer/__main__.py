@@ -66,7 +66,7 @@ def main():
                 int(conora_list[2]),
                 int(conora_list[3]),
                 conora_list[4],
-                int(conora_list[5]),
+                conora_list[5],
                 conora_list[6]
             ],
             2,
